@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
+	"testRevoluttera/logger"
 	"testing"
 	"time"
-	"user_db_test/logger"
 )
 
 // MockLogger is a simple implementation of logger.Logger for testing
