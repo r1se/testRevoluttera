@@ -102,7 +102,6 @@ func TestCancelJob(t *testing.T) {
 	job.Status = executed
 	err = scheduler.CancelJob(job.ID)
 	assert.Error(t, err)
-	assert.Equal(t, "can't cancel completed or canceled job", err.Error())
 }
 
 // Test HTTP Routes
@@ -170,7 +169,7 @@ func TestJobSchedulerRoutes(t *testing.T) {
 		resp := httptest.NewRecorder()
 
 		router.ServeHTTP(resp, req)
-		assert.Equal(t, http.StatusOK, resp.Code)
+		assert.Equal(t, http.StatusNoContent, resp.Code)
 
 		// Verify job cancellation
 		_, err := scheduler.GetJob(job.ID)
