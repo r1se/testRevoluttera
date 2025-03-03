@@ -1,9 +1,8 @@
-module user_db_test
+module testRevoluttera
 
-go 1.23
+go 1.24
 
 require (
-	github.com/gojuno/minimock/v3 v3.4.5
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/mux v1.8.1
 	github.com/ilyakaznacheev/cleanenv v1.5.0

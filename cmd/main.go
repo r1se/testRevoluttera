@@ -5,9 +5,9 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-	"user_db_test/config"
-	scheduler2 "user_db_test/internal/handlers"
-	"user_db_test/logger"
+	"testRevoluttera/config"
+	scheduler2 "testRevoluttera/internal/handlers"
+	"testRevoluttera/logger"
 )
 
 func main() {

@@ -7,8 +7,8 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 	"sync"
+	"testRevoluttera/logger"
 	"time"
-	"user_db_test/logger"
 )
 
 // Job struct
