@@ -12,12 +12,6 @@ import (
 	"time"
 )
 
-// MockLogger is a simple implementation of logger.Logger for testing
-type MockLogger struct{}
-
-func (l *MockLogger) Info(msg string)  {}
-func (l *MockLogger) Error(msg string) {}
-
 // TestNewJobScheduler verifies JobScheduler creation
 func TestNewJobScheduler(t *testing.T) {
 	newLogger := logger.NewLogger("taskScheduler.log", "INFO")
@@ -55,8 +49,8 @@ func TestGetJobs(t *testing.T) {
 	scheduler := NewJobScheduler(newLogger)
 
 	// Add jobs
-	scheduler.CreateJob("Job 1", time.Now().Add(1*time.Hour))
-	scheduler.CreateJob("Job 2", time.Now().Add(2*time.Hour))
+	_, _ = scheduler.CreateJob("Job 1", time.Now().Add(1*time.Hour))
+	_, _ = scheduler.CreateJob("Job 2", time.Now().Add(2*time.Hour))
 
 	jobs := scheduler.GetJobs()
 	assert.Len(t, jobs, 2)
